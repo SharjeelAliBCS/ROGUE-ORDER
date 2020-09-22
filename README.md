@@ -1,4 +1,4 @@
-![alt text](graphics/title/name.png)
+![alt text](graphics/Title/name.png)
 
 # A Sci-fi platformer video game
 
