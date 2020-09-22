@@ -7,7 +7,6 @@
 2. [Architecture](#Overview)
 3. [Guide](#guide)
 4. [Screenshots](#screenshots)
-5. [Database Diagrams](#Database-Diagrams)
 
 
 ## Overview
