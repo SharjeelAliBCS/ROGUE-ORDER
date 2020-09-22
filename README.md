@@ -1,46 +1,52 @@
-/**********************************************************************
-ROGUE ORDER
-Developer: Sharjeel Ali 
-Last Updated: Feb 17, 2018
-Requirements: Python 3 and the pygame library
-Info: A 2D based platformer game built using python for a university
-	    game development project. 
-How to run: Type the following into the command shell: 
-            "python 3 comp1501_w18_101070889_a2_source.py
-/**********************************************************************
+![alt text](graphics/title/name.png)
 
-Some important points I would like to address:
-1. As each level is different, and obviously you will not have time to spend on trying to complete each one legitimately, here is what you will need to change to make your life easier in the source file:
+# A Sci-fi platformer video game
 
-1. Infinite health:
-	In line 784, for the update_last_stand(gameData) function, change the following:
-		gameData["circle_hitbox"]["health"]["num"]-=1
-	to:
-		if gameData["level"][3]["state"]:
-                        gameData["circle_hitbox"]["health"]["num"]-=1
-
-2. I have found one glitch, that due to time constraints, I could not solve:
-	The glitch is related to the "RESUME" button on the menu. What should happen, is that whatever level you left off on, if you exit and reload the game, the level should resume. This works fine, however, manually changing  save.txt file in the Saves folder to "LEVEL_2", "LEVEL_2_KEY", or "LEVEL_3" will not work for some reason. However, it works fine on desktop (Where I actually made my game), just not virtualbox . So to fix this issue, and resume from any level do the following:
-
-	1. Play level 1: 
-		Just hit new game in the menu
-	2. Play level 2:
-		In get_variables(gameData), do the following:
-			Assign: gameData["level"][1]["state"] = False
-			Assign: gameData["level"][2]["state"] = True
-		In Saves/save.txt file, type "LEVEL_2"
-
-	3. Play level 3:
-		In get_variables(gameData), do the following:
-			Assign: gameData["level"][1]["state"] = False
-			Assign: gameData["level"][3]["state"] = True
-		In Saves/save.txt file, type "LEVEL_3"
-
-If not even this works (I tested it, and it should work), then simply turn on infinite health and spend a minute finishing level 1 to access the next levels. 
-
-3. To make things easier, the "key" is located at the end of level 1, in the commander's office. After he's done, quickly run to the right and hit enter once you are near the chest. This will prompt the save file to become: "LEVEL_2_KEY". Doing so automatically opens the door at the start of level 2, instead of relying on the rockets to blow it up. 
+## Contents
+1. [Overview](#Overview)
+2. [Architecture](#Overview)
+3. [Guide](#guide)
+4. [Screenshots](#screenshots)
+5. [Database Diagrams](#Database-Diagrams)
 
 
+## Overview
+*The year is 2318. The United Republic of Humanity (URH) has been in power for three centuries, ever since a mysterous being took over. Now confined to the shadows of his throne, Earth has become prosperous and has bathed in technology from across the stars. But secretly, every day the URH's grasp grows stronger. The citizens of Earth have grown fearful of the URH's power... and of him.*
 
-4. Audio: The game relies on audio, so please turn it on if you could. 
+*But from the light rises hope for the planet. The insurection has won countless victories against the URH, putting the lives of millions at stake. It is time for their hope to dissapear.*
 
+*It is your task, WRATH TEAM to defeat the insurection. Failure to do so will result in your termination. This is your ORDER.*
+
+This game was developed for a class at Carleton University, COMP 1405 which is an introductory video game course. As a result, this game is pretty short, with only 3 levels. However, each level is unique in obstacles and design. 
+
+## Architecture
+
+The game itself was developed in Python 3, by implementing the Pygame library to manage game assets and windows. 
+
+## Guide
+
+To install and play the game, you are require to have both Python 3 and Pygame installed. After this, simply run the following in the command line to play:
+
+`python3 main,py`
+
+
+## Screenshots
+
+### Main Menu
+
+![alt text](screenshots/menu.png)
+
+### Level 1
+
+![alt text](screenshots/level1.png)
+
+
+### Level 2
+
+![alt text](screenshots/level2a.png)
+
+![alt text](screenshots/level2b.png)
+
+### Level 3
+
+![alt text](screenshots/level3.png)

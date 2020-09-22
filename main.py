@@ -808,13 +808,13 @@ def update_circle_hitbox(gameData):
                                         
                                         if gameData["sprites"]["Characters"]["commander"]["counter"] <30:
                                                 gameData["sprites"]["dialog"]["commander"]["counter"] = 45*40
-                                                pygame.mixer.Channel(1).play(pygame.mixer.Sound('sounds/shot1.ogg'))
+                                                pygame.mixer.Channel(1).play(pygame.mixer.Sound('sounds/shot.ogg'))
                                         elif gameData["sprites"]["Characters"]["commander"]["counter"] <60:
                                                 gameData["sprites"]["dialog"]["commander"]["counter"] = 48*40
-                                                pygame.mixer.Channel(1).play(pygame.mixer.Sound('sounds/shot2.ogg'))
+                                                pygame.mixer.Channel(1).play(pygame.mixer.Sound('sounds/shot1.ogg'))
                                         elif gameData["sprites"]["Characters"]["commander"]["counter"] <100:
                                                 gameData["sprites"]["dialog"]["commander"]["counter"] = 51*40
-                                                pygame.mixer.Channel(1).play(pygame.mixer.Sound('sounds/shot3.ogg'))
+                                                pygame.mixer.Channel(1).play(pygame.mixer.Sound('sounds/shot2.ogg'))
                                         elif gameData["sprites"]["Characters"]["commander"]["counter"] <140:
                                                 gameData["sprites"]["Characters"]["commander"]["dead"] = True
                         
@@ -1728,7 +1728,7 @@ def init_data(gameData):
         gameData["sprites"]["dialog"]["leader"]["image"] = []
 
         for i in range(55):
-                image = pygame.image.load("graphics/chat/leaderDialog/Leader"+str(i)+".png")
+                image = pygame.image.load("dialog/leaderDialog/Leader"+str(i)+".png")
                 gameData["sprites"]["dialog"]["leader"]["image"].append(image)
         
         gameData["sprites"]["dialog"]["commander"] = {}
@@ -1736,7 +1736,7 @@ def init_data(gameData):
         gameData["sprites"]["dialog"]["commander"]["image"] = []
 
         for i in range(55):
-                image = pygame.image.load("graphics/chat/commanderDialog/commander"+str(i)+".png")
+                image = pygame.image.load("dialog/commanderDialog/commander"+str(i)+".png")
                 gameData["sprites"]["dialog"]["commander"]["image"].append(image)
         
         
@@ -1823,6 +1823,7 @@ def main():
 
                 gameData = game_loop_inputs(gameData)
                 gameData["save_data"] = load_text("Save/Save.txt")
+                print(gameData["save_data"])
 
                 if gameData["new_game"]:
                         game_data = init_data(gameData)  
